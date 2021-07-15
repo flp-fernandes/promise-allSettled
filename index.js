@@ -8,6 +8,30 @@ const promises = [
     }),
 ];
 
+/*
+const testePromiseAll = async () => {
+    try {
+        const result = await Promise.all(promises);
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+testePromiseAll();
+*/
+
+const testePromiseAllSettled = async () => {
+    try {
+        const result = await Promise.allSettled(promises);
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+testePromiseAllSettled();
+
 // Promise.all(promises).then(console.log).catch(console.error);
 // Error: Boom
 //     at /home/heyfelipao/Code/javascript/using-promise-allSettled/index.js:7:15
@@ -21,6 +45,8 @@ const promises = [
 //     .then(res => res.map(p => p.value))
 //     .then(console.log);
 
+/*
 Promise.allSettled(promises)
     // .then(res => res.map(p => console.log(`Status: ${p.status} - value: ${p.value}`)));
     .then(res => console.log(res));
+*/
